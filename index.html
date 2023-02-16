@@ -1,55 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
- <title>TAYCO_RESUME</title>
-       <h1>HELLO, WORLD! I'M JP
-      <h2>Jerome Patrick R. Tayco</h2>
-     </h1>
-  <img src="jp.jpg" width="150px" height="150px"/>
- </head>
-  <p class="head">Address</p>
-  <ul>
-    <li>Zone 3, Tambo, Pamplona, Camarines sur</li>
-  </ul>
-  <p class="head">Contact Information</p>
-  <ul>
-    <li>Contact Number: 09454524069</li>
-    <li>Email: jtayco@gbox.adnu.edu.ph</li>
-  </ul>
-  <p class="head">Short Personal Statement</p>
-  <ul>
-    <li>I have repeatedly demonstrated my capacity to meet deadlines,<br>
-    accomplish project goals, handle mission-critical issues, and prioritize<br>
-    important activities while upholding the high standards expected of<br>
-    my position.To advance my career aspirations, I'm now looking for a <br>
-    position in a reputable<br>
-    data science company.</li>
-  </ul>
-  <p class="head">Educational History</p>
-  <ul>
-      <li>Primary: Tambo Elementary school</li>
-      <li>Secondary: Ateneo de Naga University</li>
-      <li>College: Ateneo de Naga University</li>
-    </ul>
-  <p class="head">General and Technical Skills</p>
-  <ul>
-    <li>Digital Design</li>
-    <li>Programming</li>
-  </ul>
-  <p class="head">Certifications</p>
-  <ul>
-    <li>SAP Database Managing</li>
-  </ul>
-   <p class="head">Character References</p>
-  <ul>
-    <li>Maricel Fornaleza<br>
-    Profesor<br>
-    Ateneo de Naga University<br>
-    2187 Clive Road, House Springs, Missouri 63940<br>
-    mformaleza@gbox.adnu.edu.ph<br><br>
-<a href="contact.html">DROP A MESSAGE!</a>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 
-</li>
-  </ul>
+</head>
+<body>
+
+<h3>Password Validation</h3>
+<p>Try to submit the form.</p>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="usrname">Username</label>
+    <input type="text" id="usrname" name="usrname" required>
+
+    <label for="psw">Password</label>
+    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+<script>	
+  
+var myInput = document.getElementById("psw");
+
+var length = document.getElementById("length");
+
+// When the user clicks on the password field, show the message box
+myInput.onfocus = function() {
+  document.getElementById("message").style.display = "block";
+}
+
+// When the user clicks outside of the password field, hide the message box
+myInput.onblur = function() {
+  document.getElementById("message").style.display = "none";
+}
+
+// When the user starts to type something inside the password field
+myInput.onkeyup = function() {
+  // Validate length
+  if(myInput.value.length >= 8) {
+    length.classList.remove("invalid");
+    length.classList.add("valid");
+  } else {
+    length.classList.remove("valid");
+    length.classList.add("invalid");
+  }
+}
+
+</script>
+
 </body>
+</html>
