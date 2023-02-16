@@ -1,62 +1,52 @@
+body {
+  margin: 20px;
+  background: #292929;
 
-<style>
-/* Style all input fields */
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
 }
 
-/* Style the submit button */
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
+a{
+  color: #ffa31a;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
+ input{
+  background-color: #ffa31a;
+  color: #808080;
+  padding: 10px 25px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+textarea{
+  background-color: #ffa31a;
+  color: #808080 ;
+  padding: 10px 0px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 
-/* Style the container for inputs */
-.container {
-  background-color: #f1f1f1;
-  padding: 20px;
 }
-
-/* The message box is shown when the user clicks on the password field */
-#message {
-  display:none;
-  background: #f1f1f1;
-  color: #000;
-  position: relative;
-  padding: 20px;
-  margin-top: 10px;
+h1{
+	color: #ffa31a;
+  font-size: 90px;
 }
-
-#message p {
-  padding: 10px 35px;
-  font-size: 18px;
+h2 {
+  font-size: 50px;
+  text-align: center;
+  color: #ffa31a;
+  background-color: #808080;
+  padding:30px 0px;
+  border-inline-start-style: solid;
+  border-inline-start-width: 115px;
 }
-
-/* Add a green text color and a checkmark when the requirements are right */
-.valid {
-  color: green;
+* {
+    color: white;
+      font-family: sans-serif;
+      font-size: 15px;
 }
-
-.valid:before {
-  position: relative;
-  left: -35px;
-  content: "✔";
+body > p {
+      color: #ffa31a ; 
+      padding-left: 10px;
 }
-
-/* Add a red text color and an "x" when the requirements are wrong */
-.invalid {
-  color: red;
-}
-
-.invalid:before {
-  position: relative;
-  left: -35px;
-  content: "✖";
-}
-</style>
